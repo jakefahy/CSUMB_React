@@ -1,0 +1,26 @@
+.tableFormat {
+	width: 100%;
+	font-family: arial, sans-serif;
+}
+
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 20px;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.no-standing {
+	text-align: center;
+}

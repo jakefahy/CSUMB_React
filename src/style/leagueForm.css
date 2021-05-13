@@ -1,0 +1,26 @@
+.editIcon {
+    height: 25px;
+    width: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.sportSpan {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    
+}
+.addLeague {
+	float: right;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.gameSpan {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding-top: 10px;
+    
+}
