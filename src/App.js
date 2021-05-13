@@ -26,7 +26,7 @@ class LoginPage extends Component {
 				    var profile = authInstance.currentUser.get().getBasicProfile()
 					axios({
 				        method:'post', 
-				        url: 'http://localhost:8000/api/createAccount/', 
+				        url: 'https://csumb-intramurals.herokuapp.com/api/createAccount/', 
 				        data: {
 							email: profile.getEmail(),
 							display_name: profile.getName(),
@@ -91,7 +91,7 @@ class App extends Component {
 	      	const email = profile.getEmail();
 	    	axios({
 		        method:'get', 
-		        url: 'http://localhost:8000/api/getAccountByEmail/'+email
+		        url: 'https://csumb-intramurals.herokuapp.com/api/getAccountByEmail/'+email
 	        })
 	        .then(({data}) => {
 	        	this.setState({
