@@ -85,7 +85,7 @@ class CreateSportForm extends Component {
 
     render () {
         return (
-            <div class="sportForm">
+            <div>
                 <h2 className="modalText">Add a New Sport</h2>
                 <form onSubmit={this.submitHandler}>
                     <label className="modalText">Sport Name</label> <br/>
