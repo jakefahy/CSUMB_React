@@ -24,7 +24,7 @@ class CreateTeamForm extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/api/getLeagueById/'+this.state.leagueId)
+        fetch('https://csumb-intramurals.herokuapp.com/api/getLeagueById/'+this.state.leagueId)
         .then(res => res.json())
         .then((res) => {
             this.setState({
@@ -64,7 +64,7 @@ class CreateTeamForm extends Component {
           }
         axios({
             method:'post', 
-            url: 'http://localhost:8000/api/createTeam/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/createTeam/', 
             data: teamData
         })
         .then(({data}) => {

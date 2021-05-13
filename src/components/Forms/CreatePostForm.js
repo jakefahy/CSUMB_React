@@ -52,7 +52,7 @@ class CreatePostForm extends Component {
         // add post to django database
         axios({
             method:'post', 
-            url: 'http://localhost:8000/api/createPost/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/createPost/', 
             data: {
               text: this.state.postText,
               media_url: this.state.mediaUrl,
@@ -74,7 +74,7 @@ class CreatePostForm extends Component {
 
         axios({
             method:'put', 
-            url: 'http://localhost:8000/api/editPost/'+ (this.state.post.id).toString()+'/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/editPost/'+ (this.state.post.id).toString()+'/', 
             data: {
               text: newText,
               media_url: this.state.mediaUrl,
@@ -161,7 +161,7 @@ class CreatePostForm extends Component {
     deleteHandler(event) {
         axios({
             method:'delete', 
-            url: 'http://localhost:8000/api/deletePost/'+this.state.post.id,
+            url: 'https://csumb-intramurals.herokuapp.com/api/deletePost/'+this.state.post.id,
         })
         .then(({data}) => {
             console.log(data);

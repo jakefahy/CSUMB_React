@@ -41,7 +41,7 @@ class LeaguePage extends Component {
   componentDidMount() {
   	localStorage.setItem('default', 0);    
 
-	fetch("http://localhost:8000/api/getTeamsByLeague/" + this.props.props.match.params.id)
+	fetch("https://csumb-intramurals.herokuapp.com/api/getTeamsByLeague/" + this.props.props.match.params.id)
 	.then(res => res.json())
 	.then(
 	  (result) => {
@@ -60,7 +60,7 @@ class LeaguePage extends Component {
 	  }
 	)
 
-	fetch('http://localhost:8000/api/getSportById/'+this.props.props.match.params.sportId)
+	fetch('https://csumb-intramurals.herokuapp.com/api/getSportById/'+this.props.props.match.params.sportId)
         .then(res => res.json())
         .then((res) => {
             this.setState({
@@ -68,7 +68,7 @@ class LeaguePage extends Component {
 			});
         });
 
-    fetch('http://localhost:8000/api/getLeagueById/'+this.props.props.match.params.id)
+    fetch('https://csumb-intramurals.herokuapp.com/api/getLeagueById/'+this.props.props.match.params.id)
         .then(res => res.json())
         .then((res) => {
         	this.setState({

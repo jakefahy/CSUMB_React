@@ -50,7 +50,7 @@ class GenerateScheduleForm extends Component {
           }
         axios({
             method:'post', 
-            url: 'http://localhost:8000/api/generateGameSchedule/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/generateGameSchedule/', 
             data: gameData
         })
         .then(({data}) => {

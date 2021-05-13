@@ -43,7 +43,7 @@ class SportsPage extends Component {
   }
 
 	componentDidMount() {
-		fetch("http://localhost:8000/api/getSports/")
+		fetch("https://csumb-intramurals.herokuapp.com/api/getSports/")
 		  .then(res => res.json())
 		  .then(
 			(result) => {
@@ -60,7 +60,7 @@ class SportsPage extends Component {
 			}
 		  )
 
-		fetch("http://localhost:8000/api/getLeagues/")
+		fetch("https://csumb-intramurals.herokuapp.com/api/getLeagues/")
 		  .then(res => res.json())
 		  .then(
 			(result) => {

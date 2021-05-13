@@ -16,7 +16,7 @@ class MySports extends Component {
   }
 
   componentWillMount() {
-    fetch("http://localhost:8000/api/getProfileInfoByUser/"+this.state.user.id).then(res => res.json()).then(
+    fetch("https://csumb-intramurals.herokuapp.com/api/getProfileInfoByUser/"+this.state.user.id).then(res => res.json()).then(
       (result) => {
         this.setState({
           eventsArray: result

@@ -54,7 +54,7 @@ class ProfilePage extends Component {
   }
 
   componentWillMount() {
-    fetch("http://localhost:8000/api/getWinLossByUser/"+this.state.user.id).then(res => res.json()).then(
+    fetch("https://csumb-intramurals.herokuapp.com/api/getWinLossByUser/"+this.state.user.id).then(res => res.json()).then(
       (result) => {
         this.setState({
           outcomes: result

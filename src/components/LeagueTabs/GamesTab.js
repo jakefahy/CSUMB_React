@@ -28,7 +28,7 @@ class GamesTab extends Component {
 
 
     componentDidMount() {
-        fetch('http://localhost:8000/api/getEventsByLeague/'+this.state.leagueId)
+        fetch('https://csumb-intramurals.herokuapp.com/api/getEventsByLeague/'+this.state.leagueId)
         .then(res => res.json())
         .then((res) => {
             var data = this.sortGamesByDate(res);
@@ -108,7 +108,7 @@ class GamesTab extends Component {
     submitGameScores() {
         axios({
             method:'put', 
-            url: 'http://localhost:8000/api/updateScores/' + this.state.leagueId, 
+            url: 'https://csumb-intramurals.herokuapp.com/api/updateScores/' + this.state.leagueId, 
             data: [].concat(...this.state.sortedGames)
         })
         .then(({data}) => {

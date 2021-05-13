@@ -24,7 +24,7 @@ class AddPlayerForm extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/api/getTeamById/'+this.state.teamId)
+        fetch('https://csumb-intramurals.herokuapp.com/api/getTeamById/'+this.state.teamId)
         .then(res => res.json())
         .then((res) => {
             this.setState({
@@ -62,7 +62,7 @@ class AddPlayerForm extends Component {
 
         axios({
             method:'put', 
-            url: 'http://localhost:8000/api/editPlayers/'+this.state.teamId+'/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/editPlayers/'+this.state.teamId+'/', 
             data: teamData
         })
         .then(({data}) => {
@@ -74,7 +74,7 @@ class AddPlayerForm extends Component {
     submitHandler(event) {
         event.preventDefault();
 
-        fetch('http://localhost:8000/api/getAccountByEmail/'+this.state.playerEmail)
+        fetch('https://csumb-intramurals.herokuapp.com/api/getAccountByEmail/'+this.state.playerEmail)
         .then(res => res.json())
         .then((res) => {
             if(res.status == "DoesNotExist") {

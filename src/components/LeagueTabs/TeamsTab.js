@@ -43,7 +43,7 @@ class TeamsTab extends Component {
 			if(a[index].id == event.target.value) {
 				axios({
 					method:'post',
-					url: 'http://localhost:8000/api/joinTeam/',
+					url: 'https://csumb-intramurals.herokuapp.com/api/joinTeam/',
 					data: {
 					  user_id: this.state.user.id,
 					  team_id: event.target.value,
@@ -73,7 +73,7 @@ class TeamsTab extends Component {
 			if(a[index].id == event.target.value) {
 				axios({
 					method:'post',
-					url: 'http://localhost:8000/api/leaveTeam/',
+					url: 'https://csumb-intramurals.herokuapp.com/api/leaveTeam/',
 					data: {
 					  user_id: this.state.user.id,
 					  team_id: event.target.value,
@@ -112,7 +112,7 @@ class TeamsTab extends Component {
 
 	componentDidMount() {
 
-		fetch("http://localhost:8000/api/getLeagueById/" + this.state.leagueId)
+		fetch("https://csumb-intramurals.herokuapp.com/api/getLeagueById/" + this.state.leagueId)
 		  .then(res => res.json())
 		  .then(
 			(res) => {
@@ -122,7 +122,7 @@ class TeamsTab extends Component {
 			}
 		  )
 
-		  fetch("http://localhost:8000/api/getAccounts/")
+		  fetch("https://csumb-intramurals.herokuapp.com/api/getAccounts/")
 		  .then(res => res.json())
 		  .then(
 			(result) => {
@@ -147,7 +147,7 @@ class TeamsTab extends Component {
 	deleteHandler(teamId) {
 	    axios({
 	        method:'delete', 
-	        url: 'http://localhost:8000/api/deleteTeam/'+teamId,
+	        url: 'https://csumb-intramurals.herokuapp.com/api/deleteTeam/'+teamId,
 	    })
 	    .then(({data}) => {
 	        window.location.reload(); 

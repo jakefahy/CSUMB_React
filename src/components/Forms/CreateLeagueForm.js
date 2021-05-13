@@ -69,7 +69,7 @@ class CreateSportForm extends Component {
         };
         axios({
             method:'post', 
-            url: 'http://localhost:8000/api/createLeague/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/createLeague/', 
             data: leagueData
         })
         .then(({data}) => {

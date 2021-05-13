@@ -34,7 +34,7 @@ class TeamPage extends Component {
   }
 
   componentDidMount() {
-	fetch("http://localhost:8000/api/getPlayersByTeamId/"+this.state.teamId)
+	fetch("https://csumb-intramurals.herokuapp.com/api/getPlayersByTeamId/"+this.state.teamId)
 		.then(res => res.json())
 		.then((res) => {
 			this.setState({
@@ -44,7 +44,7 @@ class TeamPage extends Component {
 		}
 	);
 
-	fetch("http://localhost:8000/api/getTeamById/"+this.state.teamId)
+	fetch("https://csumb-intramurals.herokuapp.com/api/getTeamById/"+this.state.teamId)
 		.then(res => res.json())
 		.then((res) => {
 			this.setState({
@@ -52,7 +52,7 @@ class TeamPage extends Component {
 				leagueId: res.league
 			})
 
-			fetch("http://localhost:8000/api/getLeagueById/"+res.league)
+			fetch("https://csumb-intramurals.herokuapp.com/api/getLeagueById/"+res.league)
 				.then(res => res.json())
 				.then((res) => {
 					this.setState({
@@ -61,7 +61,7 @@ class TeamPage extends Component {
 						playerCapacity: res.player_limit
 					});
 					
-					fetch("http://localhost:8000/api/getSportById/"+res.sport)
+					fetch("https://csumb-intramurals.herokuapp.com/api/getSportById/"+res.sport)
 						.then(res => res.json())
 						.then((res) => {
 							
@@ -75,7 +75,7 @@ class TeamPage extends Component {
 		}
 	);
 
-	fetch("http://localhost:8000/api/getGamesByTeam/"+this.state.teamId)
+	fetch("https://csumb-intramurals.herokuapp.com/api/getGamesByTeam/"+this.state.teamId)
 		.then(res => res.json())
 		.then((res) => {
 			this.setState({
@@ -99,7 +99,7 @@ class TeamPage extends Component {
   deleteHandler(event) {
     axios({
         method:'delete', 
-        url: 'http://localhost:8000/api/deleteTeam/'+this.state.teamId,
+        url: 'https://csumb-intramurals.herokuapp.com/api/deleteTeam/'+this.state.teamId,
     })
     .then(({data}) => {
         window.location = ('/leagues/'+ this.state.sportName+'/'+this.state.leagueName+'/'+this.state.leagueId+'/'+this.state.sportId);
@@ -123,7 +123,7 @@ class TeamPage extends Component {
 
         axios({
             method:'put', 
-            url: 'http://localhost:8000/api/editPlayers/'+this.state.teamId+'/', 
+            url: 'https://csumb-intramurals.herokuapp.com/api/editPlayers/'+this.state.teamId+'/', 
             data: teamData
         })
         .then(({data}) => {

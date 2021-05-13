@@ -16,7 +16,7 @@ class ProfilePastSports extends Component {
   }
 
   componentWillMount() {
-    fetch("http://localhost:8000/api/getProfilePastInfoByUser/"+this.state.user.id).then(res => res.json()).then(
+    fetch("https://csumb-intramurals.herokuapp.com/api/getProfilePastInfoByUser/"+this.state.user.id).then(res => res.json()).then(
       (result) => {
         this.setState({
           eventsArray: result
