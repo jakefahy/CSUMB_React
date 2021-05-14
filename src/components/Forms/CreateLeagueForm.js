@@ -75,6 +75,7 @@ class CreateSportForm extends Component {
         .then(({data}) => {
             console.log(data);
             this.props.handleFormSubmit(leagueData);
+            window.location.reload()
         });
     }
     
