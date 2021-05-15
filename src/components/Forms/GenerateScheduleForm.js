@@ -63,7 +63,7 @@ class GenerateScheduleForm extends Component {
 
     render () {
         return (
-            <div className="sportForm">
+            <div>
                 <h2 className="modalText">Generate Game Schedule</h2>
                 <form onSubmit={this.submitHandler}>
                     <label className="modalText">How many total games will each team play?</label> <br/>
